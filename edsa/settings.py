@@ -27,7 +27,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'x64$@gy7#lg9y=!fsusd#1q9q(*b&l
 #DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'edsa-ug.herokuapp.com',
+]
 
 
 # Application definition
