@@ -1,0 +1,18 @@
+<!-- Anywhere this card is used, its corresponding css 'calendar.css' must be linked -->
+<a href="{% url 'events:detail' event.id %}" class="eventcard" >
+<div class="row jumbotron ">
+ <div class="col col-md-auto col-sm-auto">
+    <time datetime="{{ event.date }}" class="icon {% if event.is_upcoming %}upcoming{% endif %}">
+    <b>{{ event.date|date:"l" }}</b>
+    <strong>{{ event.date|date:"F" }}</strong>
+    <span>{{ event.date|date:"d" }}</span>
+    </time>
+</div>
+<div class="col">
+    <div><b>{{ event.name }}</b></div>
+    <div class="text-muted">{{ event.location }}</div>
+    <div>{{ event.date|date:"H:i e" }}</div>
+</div>
+</div>
+</a>
+<br>

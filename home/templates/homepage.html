@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block head%}
+<title>EDSA-UG | Home</title>
+<link rel="stylesheet" href="{% static 'events/css/calendar.css' %}" >
+{% endblock %}
+
+{% block body %}
+
+{% for msg in alert %}<div class="row text-center" style="background-color:lightcoral">Alert: {{ msg.text }}</div>{% endfor %}
+
+<div>
+	<h3> Welcome </h3>
+	{% for msg in welcome %}
+	<div>
+		<p>{{ msg.text|safe }}</p>
+	</div>
+	{% endfor %}
+</div>
+
+<div>
+	<h3> News </h3>
+	{% for article in articles %}
+	<div>
+		{% include 'news/includes/news_card.html' with article=article %}
+	</div>
+	{% endfor %}
+</div>
+
+<div class="container-fluid w-100 bg-white">
+	<h4> Watch out for these events </h4>
+	{% for event in events %}
+	{% include 'events/includes/event_card.html' with event=event %}
+	{% empty %}
+	<p class="lead">We'll post upcoming events here shortly</p>
+	{% endfor %}
+</div>
+
+{% endblock %}

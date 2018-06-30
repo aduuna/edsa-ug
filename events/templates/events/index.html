@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<title>Events</title>
+<link rel="stylesheet" href="{% static 'events/css/calendar.css' %}" >
+{% endblock %}
+
+
+{% block body %}
+<div>
+    <div class="container">
+        <h2 class='Display-4' >Upcoming Events</h2>
+        {% for event in upcoming_events %}
+            {% include 'events/includes/event_card.html' with event=event %}
+        {% empty %}
+        <p class=lead> No Upcoming Events</p>
+        {% endfor %}
+            
+            <br>
+    </div>
+    
+    <div class="container">
+        <h2 class='Display-4' >Recent Events</h2>
+        {% for event in recent_events %}
+            {% include 'events/includes/event_card.html' with event=event %}
+        {% empty %}
+        <p class=lead> No Recent Events</p>
+        {% endfor %}
+        <br>
+    </div>
+</div>
+{% endblock %}

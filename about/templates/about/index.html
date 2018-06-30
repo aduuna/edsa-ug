@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>About Us</title>
+{% endblock %}
+
+{% block body %}
+<h1 class=header style="text-align:center">About Us</h1>
+<hr/>
+
+{% load static %}
+<figure>
+<img class="img-fluid" src="{% static 'images/logo.jpg' %}">
+<figcaption style='font-size:80%;text-align:center'><i>EDSA logo</i></figcaption>
+</figure>
+
+<h2 class=Display-4> Background </h2>
+<p class=lead><em>The Education Students' Association</em>(EDSA-Legon) was officially established/registered on the 4th of November 2016 as an Association in the University of Ghana, under the auspices of the then Dean of Student Affairs. As part of getting the Education program well grounded and known within the University of Ghana community, a core group of students who formed the pioneer badge of the Education program for the 2015/2016 academic year, worked towards the formation of the now established Association. </p>
+
+<p class=lead>The whole process was led by the Association's first ever President, Mr. Wisdom Kwame Kudjordji and spanned the latter days of September 2016 and the 4th of November 2016. The Association started with a population of about 180 students and has since increased to over 500 students. Two Faculty members, Dr. Paul Butakor and Dr. Yaa Cole have served as the Association's Patron since its formation. </p>
+
+<figure>
+<img class="img-fluid" src="{% static 'about/images/edsagrouppic1.jpg' %}">
+<figcaption style='font-size:80%;text-align:center'><i>Members of EDSA</i></figcaption>
+</figure>
+
+<h2 class=Display-4>Founding Executives</h2>
+<p class=lead>Below is the list of the first set of executives for the Association, who were officially elected to serve for the 2016/2017 academic year (following the Association's pioneer period):</p>
+
+<ul class='lead''>
+	<li>Mr. Wisdom Kwame Kudjordji (President)
+	<li>Miss. Nana Ama Thelma Agbakpe (Vice President)
+	<li>Miss. Emefa Agbedor (General Secretary)
+	<li>Mr. Bright Forson (Vice General Secretary)
+	<li>Mr. George Yankah (Financial Secretary)
+	<li>Miss. Mavis Amponsah (Organizer)
+	<li>Miss. Rita Agyemang (Electoral Commissioner)
+</ul>
+<br>
+<h2 class="Display-4">Purpose</h2>
+<p class="lead">The purpose of EDSA is in three(3)  sections:<br>
+    <ol type"a"	>
+        <li>Organise student oriented programs and events, in partnership with the school's hierarchy to elevate education.</li>
+        <li>Create a link between administration and the student body of the School of Education and Leadership.</li>
+        <li>Interact with stakeholder within and outside the College of Education, so as to create a common link amongst Schools of education and leadership.</li>
+       </ol>
+      </p>
+
+<figure>
+<img class="img-fluid" src="{% static 'about/images/18president.jpg' %}">
+<figcaption style='font-size:80%;text-align:center'><i>'18/19 President sharing his views on sexual harassment at an event organised by the college of Education.</i></figcaption>
+</figure>
+
+<h2 class="Display-4">Motto</h2>
+<p class="lead">The motto of EDSA-UG is one that well reflects the purpose of the Association and clearly states what it seeks to achieve .The motto is: <blockquote>'Inspiring Minds, Enhancing Development'</blockquote></p>
+
+<h2 class="Display-4">Recent Excutives</h2>
+<div>
+	{% for person in persons %}
+		{% include 'about/includes/profile_card.html' with person=person %}
+		<br>
+	{% empty %}
+	<p class="lead"> The Recent executive list is currntly unavailable</p>
+	{% endfor %}
+	<br>
+</div>
+
+{% endblock %}

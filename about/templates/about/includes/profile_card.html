@@ -1,0 +1,9 @@
+{# takes a about.medels.Person as argument and produces a profile card based on its attributes #}
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h6 class="card-title">{{ person.name }}</h6>
+    <h5 class="card-subtitle mb-2 text-muted">{{ person.position}}</h6>
+    <a href="{% url 'about:profile_detail' person.id %}" class="card-link">View Full profile</a>
+  </div>
+</div>

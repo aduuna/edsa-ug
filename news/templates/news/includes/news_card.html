@@ -1,0 +1,11 @@
+
+<div class="card mb-3">
+  <img class="card-img-top" src="{{ article.header.url }}" alt="News article header">
+  <div class="card-body">
+    <a href="{% url 'news:detail' article.slug %}"><h5 class="card-title">{{ article.title }}</h5></a>
+    <hr>
+    <p class="card-text">{{ article.shorten_body|safe }}</p>
+    <p class="card-text"><a href="{% url 'news:detail' article.slug %}"><u> Read More</u></a> | <small class="text-muted" style="size:80%">Published: {{ article.date|date:"l, jS F, Y" }} </small></p>
+  </div>
+</div>
+<br>

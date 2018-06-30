@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head%}
+<title>Profile | {{ person.name }}</title>
+{% endblock %}
+
+{% block body %}
+{% load static %}
+<div class="jumbotron-fluid bg-white" style="width:100%">
+	<div class="text-center"><br><img src="{{ person.profile_pic.url }}"  class="img-fluid text-center rounded thumbnail" alt="Profile picture" height=250 width=250></div><br>
+	<h4 class="Display-4 text-center">{{ person.name }}</h4>
+	<h5 class="Display-4 text-muted text-center">{{ person.position }}</h5>
+	<table class=table> 
+		<tr>
+			<td>Course:</td>
+			<td> {{ person.course }}</td>
+		</tr>
+		<tr>
+		<td>Graduation Year</td>
+		<td> {{ person.comp_year }}</td>
+		</tr
+		<tr>
+			<td>Contact </td>
+			<td>
+				<a href='mailto:{{ person.email }}'><button  type="button" class="btn btn-danger"><i class="far fa-envelope"></i> </button></a>
+				<a href='https://api.whatsapp.com/send?phone={{ person.get_full_number }}'><button  type=button class="btn btn-success"><i class="fab fa-whatsapp"></i> </button></a>
+			</td>
+		</tr>
+	</table>
+	<h6 class='Display-2'>Bio</h6>
+	<p class="lead">{{ person.portfolio }}</p>
+
+	<br>
+</div>
+{% endblock %}

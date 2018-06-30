@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html  lang='en'>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<link rel="stylesheet"
+		 href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+		 integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+		  crossorigin="anonymous"></link>
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		
+		  {% block head %}
+		  {% endblock%}
+	</head>
+	
+	<body >
+		<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">
+		{% load static %}
+		<img src={% static 'images/logo.jpg' %} width=30px height=30px/>
+		EDSA-UG</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		<div class="navbar-nav">
+		<a class="nav-item nav-link active" href="{% url 'homepage' %}">Home <span class="sr-only">(current)</span></a>
+		<a class="nav-item nav-link" href="{% url 'news:index' %}">News</a>
+		<a class="nav-item nav-link" href="{% url 'events:index' %}">Events</a>
+		<a class="nav-item nav-link" href="{% url 'about:index' %}">About Us</a>
+		<a class="nac-item nav-link" href="#contactinfo">Contact Us</a>
+		</div>
+		</div>
+		</nav>
+		
+		<div class="container">
+		{% block body %}
+		{% endblock %}
+		</div>
+		
+		<footer class="footer bg-dark text-center" style="bottom:0;position:relative;width:100%;color:grey">
+			<div id="contactinfo" class="jumbotron jumbotron-fluid bg-dark">
+			<div class=container>
+				<span  class="lead"><strong>connect with us:</strong></span><br>
+				<a href='mailto:edsa_ug@gmail.com'><button  type="button" class="btn btn-outline-danger"><i class="far fa-envelope"></i> </button></a>
+				<a href='https://api.whatsapp.com/send?phone=233245100124' ><button  type=button class="btn btn-outline-success"><i class="fab fa-whatsapp"></i></button></a>
+				<a href='https://mobile.twitter.com/education_ug' ><button  type=button class="btn btn-outline-info"><i class="fab fa-twitter"></i> </button></a>
+				
+			</div>
+			<br/>
+			<br/>
+			<div class=container>
+			<span class="lead"><strong>All enquiries can be directed to:</strong></span><br>
+				<address> 
+					The President - EDSA–UG,<br/>
+					School of Education and Leasership<br/>
+					College of Education<br/>
+					P.O. Box LG 1181<br/>
+					University of Ghana - Legon
+				</address>
+			</div>
+			</div>
+						
+			<div class=container>
+				<p style="font-size:80%">©2018 EDSA-UG  |  <a href="#">LongHope Tech</a></p>
+			</div>
+		</footer>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head%}
+<title>News | {{ article.title }}</title>
+{% endblock %}
+
+{% block body %}
+{% load static %}
+<div class="jumbotron-fluid bg-white" style="width:100%">
+	<div class="text-center"><br><img src="{{ article.header.url }}"  class="img-fluid w-100 thumbnail" alt="Profile picture"></div><br>
+	<h4 class="Display-4">{{ article.title }}</h4>
+	<small class="text-muted" style="size:80%">Published: {{ article.date|date:"l, jS F, Y" }} </small>
+
+	<p class="article-body">{{ article.cleaned_body|safe }}</p>
+
+</div>
+{% endblock %}
